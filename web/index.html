@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>APK Check – Android malware detection</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<header>
+  <h1>APK Check</h1>
+  <p>Upload an Android app to see what its declared permissions say about it. Your file is analysed on this computer and never executed.</p>
+</header>
+
+<main>
+  <div class="col">
+    <section class="panel">
+      <h2>Analyze an APK</h2>
+      <div id="drop" tabindex="0" role="button" aria-label="Choose an APK file">
+        <svg class="up" viewBox="0 0 48 48" width="52" height="52" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 4l16 6v11c0 11-7 19-16 23C15 40 8 32 8 21V10z"/><path d="M24 31V17m-6 6l6-6 6 6"/></svg>
+        <strong>Drop an APK here</strong>
+        <span>or <u>choose a file</u> from your device</span>
+        <em>.apk only · up to 150 MB</em>
+      </div>
+      <input id="file" type="file" accept=".apk,application/vnd.android.package-archive" class="hidden">
+      <div id="err" class="err hidden" role="alert"></div>
+      <div id="run" class="hidden">
+        <div class="frow">
+          <div class="fic" aria-hidden="true">APK</div>
+          <div class="finfo"><div class="fname" id="fn"></div><div class="fsize" id="fs"></div></div>
+          <button class="btn ghost" id="cancel" type="button">Cancel</button>
+        </div>
+        <div id="prog"><div id="bar"></div></div>
+        <ol class="steps" id="steps" aria-live="polite"></ol>
+      </div>
+    </section>
+
+
+  </div>
+
+  <div class="col">
+    <section class="panel" id="result">
+      <div class="empty">Results appear here after you upload an APK.</div>
+    </section>
+  </div>
+</main>
+
+<script type="module" src="/js/main.js"></script>
+</body>
+</html>

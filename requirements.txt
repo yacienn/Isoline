@@ -1,0 +1,4 @@
+androguard>=4.1
+scikit-learn>=1.4
+pandas>=2.0
+joblib>=1.3

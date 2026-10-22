@@ -1,2 +1,12 @@
 .venv
 __pycache__
+*.pyc
+# Never commit samples or generated artifacts
+data/benign/*
+data/malware/*
+!data/*/.gitkeep
+*.apk
+dataset.csv
+features.json
+models/*.joblib
+cicmaldroid_permissions.csv

@@ -14,10 +14,6 @@ def extract_features(apk_path: str | Path) -> dict:
     # Parse the APK, its DEX files, and analysis information.
     apk, dex_files, analysis = AnalyzeAPK(str(apk_path))
 
-    dex = dex_files[0]
-
-    print("Available methods:")
-    print([name for name in dir(dex) if "method" in name.lower()])
     # Extract manifest information.
     permissions = sorted(set(apk.get_permissions()))
 
